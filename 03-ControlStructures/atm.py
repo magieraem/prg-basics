@@ -11,6 +11,8 @@ while True:
     print("2. Deposit")
     print("3. Withdraw")
     print("4. Exit")
+    print("5. Check PIN")
+    print("6. Change PIN")
 
     choice = input("Choose an option (1-4): ")
     print()
@@ -31,5 +33,16 @@ while True:
     elif choice == '4':
         print("Exiting... Thank you for using the ATM!")
         break  # Exit the loop
+    elif choice == '5':
+        print(f"{pin}")
+    elif choice == '6':
+        pin_ok = False
+        while pin_ok == False:
+            new_pin = input("Wpisz Pin:")
+            if new_pin.isdigit() and len(new_pin)==4:
+                pin_ok = True
+                print("Pin zmieniony")
+        else:
+            print("Pin niepoprawny, wpisz jeszcze raz.")
     else:
         print("Invalid option. Please try again.")
